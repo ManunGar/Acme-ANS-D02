@@ -14,8 +14,6 @@ public class Airport extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	//Attributes
-
 	@Mandatory
 	@ValidString(max = 50)
 	@Automapped

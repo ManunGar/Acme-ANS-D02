@@ -9,3 +9,5 @@
 # they accept any liabilities with respect to them.
 
 25.1.0 First project version
+
+25.2.0 Second project version

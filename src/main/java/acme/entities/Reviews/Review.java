@@ -1,6 +1,7 @@
 
 package acme.entities.Reviews;
 
+import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -12,15 +13,19 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidScore;
 import acme.client.components.validation.ValidString;
+import lombok.Getter;
+import lombok.Setter;
 
+@Entity
+@Getter
+@Setter
 public class Review extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	//Attributes
 	@Mandatory
 	@ValidString(max = 50)
-	@Automapped //??
+	@Automapped
 	private String				name;
 
 	@Mandatory

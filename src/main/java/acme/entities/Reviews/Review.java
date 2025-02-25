@@ -26,7 +26,7 @@ public class Review extends AbstractEntity {
 	//Attributes
 	@Mandatory
 	@ValidString(max = 50)
-	@Automapped //??
+	@Automapped
 	private String				name;
 
 	@Mandatory

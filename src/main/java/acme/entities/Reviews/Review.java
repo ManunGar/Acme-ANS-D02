@@ -1,12 +1,13 @@
 
 package acme.entities.Reviews;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractEntity;
-import acme.client.components.datatypes.Moment;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -31,7 +32,7 @@ public class Review extends AbstractEntity {
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Moment				moment;
+	private Date				moment;
 
 	@Mandatory
 	@ValidString(max = 50)

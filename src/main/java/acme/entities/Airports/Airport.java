@@ -3,6 +3,7 @@ package acme.entities.Airports;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -20,8 +21,6 @@ public class Airport extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	//Attributes
-
 	@Mandatory
 	@ValidString(max = 50)
 	@Automapped
@@ -33,6 +32,7 @@ public class Airport extends AbstractEntity {
 	private String				IATAcode;
 
 	@Mandatory
+	@Valid
 	@Automapped
 	private OperationalScope	operationalScope;
 

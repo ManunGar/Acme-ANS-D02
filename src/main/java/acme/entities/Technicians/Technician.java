@@ -3,7 +3,6 @@ package acme.entities.Technicians;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
 import acme.client.components.basis.AbstractEntity;
@@ -37,7 +36,6 @@ public class Technician extends AbstractEntity {
 	private String				specialisation;
 
 	@Mandatory
-	@NotNull
 	@Automapped
 	private Boolean				passedAnnualHealthTest;
 

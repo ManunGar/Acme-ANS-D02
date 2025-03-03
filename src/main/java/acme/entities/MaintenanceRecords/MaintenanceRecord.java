@@ -29,7 +29,6 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	@Automapped
 	private Date				maintenanceMoment;
 
 	@Mandatory
@@ -40,7 +39,6 @@ public class MaintenanceRecord extends AbstractEntity {
 	@Mandatory
 	@ValidMoment(past = false)
 	@Temporal(TemporalType.TIMESTAMP)
-	@Automapped
 	private Date				nextInspection;
 
 	@Mandatory

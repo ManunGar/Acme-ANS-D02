@@ -3,12 +3,12 @@ package acme.entities.Technicians;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.constraints.PositiveOrZero;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,10 +37,10 @@ public class Technician extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private Boolean				passedAnnualHealthTest;
+	private boolean				passedAnnualHealthTest;
 
 	@Mandatory
-	@PositiveOrZero
+	@ValidNumber(min = 0)
 	@Automapped
 	private Integer				yearsOfExperience;
 

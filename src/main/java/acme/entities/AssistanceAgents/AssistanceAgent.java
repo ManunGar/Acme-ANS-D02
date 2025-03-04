@@ -36,8 +36,8 @@ public class AssistanceAgent extends AbstractRole {
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString(max = 255)		//It is a List delimitated by comas
-	@Column(length = 255)
+	@ValidString		//It is a List delimitated by comas
+	@Automapped
 	private String				spokenLanguages;
 
 	@Mandatory
@@ -46,8 +46,8 @@ public class AssistanceAgent extends AbstractRole {
 	private Date				moment;
 
 	@Optional
-	@ValidString(max = 255)
-	@Column(length = 255)
+	@ValidString
+	@Automapped
 	private String				briefBio;
 
 	@Optional
@@ -59,6 +59,7 @@ public class AssistanceAgent extends AbstractRole {
 	@ValidUrl
 	@Automapped
 	private String				photo;
+
 	// Relationships
 
 	@Mandatory

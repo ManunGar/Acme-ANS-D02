@@ -3,8 +3,9 @@ package acme.entities.TrackingLogs;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -13,6 +14,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.entities.Claims.Claim;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,7 +32,7 @@ public class TrackingLog extends AbstractEntity {
 
 	@Mandatory
 	@ValidString(max = 50)
-	@Column(length = 50)
+	@Automapped
 	private String				step;
 
 	@Mandatory
@@ -40,11 +42,18 @@ public class TrackingLog extends AbstractEntity {
 
 	@Mandatory
 	@Automapped
-	private boolean				indicator;
+	private boolean				accepted;	//Indicator
 
 	@Optional
 	@ValidString(max = 255)
-	@Column(length = 255)
+	@Automapped
 	private String				resolution;
+
+	// Relationships
+
+	@Mandatory
+	@Valid
+	@ManyToOne
+	private Claim				claim;
 
 }

@@ -4,7 +4,6 @@ package acme.entities.Tasks;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.validation.constraints.PositiveOrZero;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -37,7 +36,7 @@ public class Task extends AbstractEntity {
 	private Integer				priority;
 
 	@Mandatory
-	@PositiveOrZero
+	@ValidNumber(min = 0)
 	@Automapped
 	private Integer				estimatedDuration;
 }

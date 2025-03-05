@@ -1,13 +1,14 @@
 
 package acme.realms;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractRole;
-import acme.client.components.datatypes.Moment;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
@@ -40,7 +41,7 @@ public class AirlineManager extends AbstractRole {
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Moment				dateOfBirth; // QUEST
+	private Date				dateOfBirth; // QUEST
 
 	@Optional
 	@ValidUrl

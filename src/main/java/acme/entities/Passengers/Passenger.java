@@ -54,5 +54,4 @@ public class Passenger extends AbstractRole {
 	@ValidString(max = 50)
 	@Automapped
 	private String				specialNeeds;
-
 }

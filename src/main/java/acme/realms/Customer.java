@@ -48,7 +48,7 @@ public class Customer extends AbstractRole {
 	private String				country;
 
 	@Optional
-	@ValidNumber(max = 500.000)
+	@ValidNumber(max = 500)
 	@Automapped
 	private Integer				earnedPoints;
 

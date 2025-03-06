@@ -19,6 +19,7 @@ import acme.client.components.validation.ValidCreditCard;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
+import acme.entities.Flight.Flight;
 import acme.realms.Customer;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,6 +35,11 @@ public class Booking extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Customer			customer;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Flight				flight;
 
 	@Mandatory
 	@ValidString(max = 3, pattern = "^[A-Z0-9]{6,8}$")

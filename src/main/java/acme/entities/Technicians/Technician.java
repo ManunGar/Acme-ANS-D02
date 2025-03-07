@@ -1,64 +1,52 @@
 
-package acme.entities.Airports;
+package acme.entities.Technicians;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Airport extends AbstractEntity {
+public class Technician extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	@Mandatory
-	@ValidString(max = 50)
-	@Automapped
-	private String				name;
-
-	@Mandatory
-	@ValidString(max = 3, pattern = "^[A-Z]+$")
+	@ValidString(pattern = "^[A-Z]{2-3}\\d{6}$")
 	@Column(unique = true)
-	private String				IATAcode;
+	private String				licenseNumber;
 
 	@Mandatory
-	@Valid
+	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
-	private OperationalScope	operationalScope;
-
-	@Mandatory
-	@ValidString(max = 50)
-	@Automapped
-	private String				city;
+	private String				phoneNumber;
 
 	@Mandatory
 	@ValidString(max = 50)
 	@Automapped
-	private String				country;
+	private String				specialisation;
 
-	@Optional
-	@ValidUrl
+	@Mandatory
 	@Automapped
-	private String				website;
+	private boolean				passedAnnualHealthTest;
+
+	@Mandatory
+	@ValidNumber(min = 0)
+	@Automapped
+	private Integer				yearsOfExperience;
 
 	@Optional
 	@ValidString
-	@Column(unique = true)
-	private String				address;
-
-	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
 	@Automapped
-	private String				contactPhoneNumber;
+	private String				certifications;
 
 }

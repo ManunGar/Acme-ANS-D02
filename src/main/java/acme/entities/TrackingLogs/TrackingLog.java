@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
@@ -49,11 +50,20 @@ public class TrackingLog extends AbstractEntity {
 	@Automapped
 	private String				resolution;
 
+	// Derived attributes -----------------------------------------------------
+
+
+	@Transient
+	public boolean validResolution() {
+		return this.resolution != null && !this.resolution.trim().isEmpty();
+	}
+
 	// Relationships
+
 
 	@Mandatory
 	@Valid
 	@ManyToOne
-	private Claim				claim;
+	private Claim claim;
 
 }

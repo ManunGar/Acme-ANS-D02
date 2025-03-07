@@ -1,26 +1,32 @@
 
-package acme.entities.Customers;
+package acme.realms;
+
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
+import acme.client.components.validation.ValidUrl;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Customer extends AbstractRole {
+public class AirlineManager extends AbstractRole {
 
 	private static final long	serialVersionUID	= 1L;
 
-	//Attributes
+	// Attributes
 
 	@Mandatory
 	@ValidString(pattern = "^[A-Z]{2,3}\\d{6}$")
@@ -28,28 +34,17 @@ public class Customer extends AbstractRole {
 	private String				identifier;
 
 	@Mandatory
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@ValidNumber(max = 65)
 	@Automapped
-	private String				phoneNumber;
+	private Integer				experience;
 
 	@Mandatory
-	@ValidString(max = 255)
-	@Automapped
-	private String				physicalAddress;
-
-	@Mandatory
-	@ValidString(max = 50)
-	@Automapped
-	private String				city;
-
-	@Mandatory
-	@ValidString(max = 50)
-	@Automapped
-	private String				country;
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				dateOfBirth; // QUEST
 
 	@Optional
-	@ValidNumber(max = 500.000)
+	@ValidUrl
 	@Automapped
-	private Integer				earnedPoints;
-
+	private String				picture;
 }

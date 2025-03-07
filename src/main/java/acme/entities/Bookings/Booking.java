@@ -42,7 +42,7 @@ public class Booking extends AbstractEntity {
 	private Flight				flight;
 
 	@Mandatory
-	@ValidString(max = 3, pattern = "^[A-Z0-9]{6,8}$")
+	@ValidString(pattern = "^[A-Z0-9]{6,8}$")
 	@Column(unique = true)
 	private String				locatorCode;
 

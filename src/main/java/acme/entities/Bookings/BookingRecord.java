@@ -1,5 +1,5 @@
 
-package acme.entities.Passengers;
+package acme.entities.Bookings;
 
 import javax.persistence.Column;
 import javax.persistence.ManyToOne;
@@ -7,9 +7,9 @@ import javax.persistence.ManyToOne;
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidString;
-import acme.entities.Bookings.Booking;
+import acme.entities.Passengers.Passenger;
 
-public class PassengerBooking extends AbstractEntity {
+public class BookingRecord extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 

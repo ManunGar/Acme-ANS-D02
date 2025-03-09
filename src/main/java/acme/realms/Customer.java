@@ -18,6 +18,8 @@ import lombok.Setter;
 @Setter
 public class Customer extends AbstractRole {
 
+	//Serialisation version
+
 	private static final long	serialVersionUID	= 1L;
 
 	//Attributes
@@ -33,17 +35,17 @@ public class Customer extends AbstractRole {
 	private String				phoneNumber;
 
 	@Mandatory
-	@ValidString(max = 255)
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				physicalAddress;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				city;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				country;
 

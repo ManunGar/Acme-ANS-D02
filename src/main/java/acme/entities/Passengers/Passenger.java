@@ -11,6 +11,7 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
+import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
@@ -21,15 +22,19 @@ import lombok.Setter;
 @Setter
 public class Passenger extends AbstractEntity {
 
+	//Serialisation version 
+
 	private static final long	serialVersionUID	= 1L;
 
+	//Attributes
+
 	@Mandatory
-	@ValidString
+	@ValidString(min = 1, max = 255)
 	@Automapped
 	private String				fullName;
 
 	@Mandatory
-	@ValidString
+	@ValidEmail
 	@Automapped
 	private String				email;
 
@@ -44,7 +49,7 @@ public class Passenger extends AbstractEntity {
 	private Date				dateOfBirth;
 
 	@Optional
-	@ValidString(max = 50)
+	@ValidString(min = 1, max = 50)
 	@Automapped
 	private String				specialNeeds;
 }

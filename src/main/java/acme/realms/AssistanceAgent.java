@@ -44,7 +44,7 @@ public class AssistanceAgent extends AbstractRole {
 
 	@Mandatory
 	@ValidMoment(past = true)
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				moment;
 
 	@Optional

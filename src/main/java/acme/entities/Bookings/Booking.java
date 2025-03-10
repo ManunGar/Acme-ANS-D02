@@ -15,7 +15,6 @@ import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidCreditCard;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
@@ -29,7 +28,11 @@ import lombok.Setter;
 @Setter
 public class Booking extends AbstractEntity {
 
+	//Serialisation version 
+
 	private static final long	serialVersionUID	= 1L;
+
+	//Relationships
 
 	@Mandatory
 	@Valid
@@ -41,8 +44,10 @@ public class Booking extends AbstractEntity {
 	@ManyToOne(optional = false)
 	private Flight				flight;
 
+	//Attributes
+
 	@Mandatory
-	@ValidString(max = 3, pattern = "^[A-Z0-9]{6,8}$")
+	@ValidString(pattern = "^[A-Z0-9]{6,8}$")
 	@Column(unique = true)
 	private String				locatorCode;
 
@@ -62,7 +67,7 @@ public class Booking extends AbstractEntity {
 	private Money				price;
 
 	@Optional
-	@ValidCreditCard
+	@ValidString(pattern = "^\\d{4}$")
 	@Automapped
 	private String				lastNibble;
 

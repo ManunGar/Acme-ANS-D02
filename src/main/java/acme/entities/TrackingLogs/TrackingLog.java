@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
 
@@ -28,7 +30,7 @@ public class TrackingLog extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoment(past = true)
-	@Automapped
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				lastUpdateMoment;
 
 	@Mandatory
@@ -46,7 +48,7 @@ public class TrackingLog extends AbstractEntity {
 	private boolean				accepted;	//Indicator
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidString
 	@Automapped
 	private String				resolution;
 

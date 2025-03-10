@@ -44,7 +44,7 @@ public class AssistanceAgent extends AbstractRole {
 
 	@Mandatory
 	@ValidMoment(past = true)
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				moment;
 
 	@Optional
@@ -57,7 +57,7 @@ public class AssistanceAgent extends AbstractRole {
 	@Automapped
 	private Money				salary;
 
-	@Mandatory
+	@Optional
 	@ValidUrl
 	@Automapped
 	private String				photo;

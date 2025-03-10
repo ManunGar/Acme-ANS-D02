@@ -12,7 +12,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidScore;
+import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
 import lombok.Getter;
 import lombok.Setter;
@@ -45,7 +45,7 @@ public class Review extends AbstractEntity {
 	private String				text;
 
 	@Optional
-	@ValidScore
+	@ValidNumber(min = 0, max = 10, integer = 2, fraction = 2)
 	@Automapped
 	private double				score;
 

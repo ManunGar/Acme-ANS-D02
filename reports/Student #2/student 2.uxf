@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>644</x>
+      <y>511</y>
+      <w>483</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer
+--
++ identifier: String {Mandatory, ValidString(pattern = "^[A-Z]{2,3}\\d{6}$"), Column(unique = true)}
++ phoneNumber: String {Mandatory, ValidString(pattern = "^\\+?\\d{6,15}$"), Automapped}
++ physicalAddress: String {Mandatory, ValidString(min = 1, max = 255), Automapped}
++ city: String {Mandatory, ValidString(min = 1, max = 50), Automapped}
++ country: String {Mandatory, ValidString(min = 1, max = 50), Automapped}
++ earnedPoints: Integer {Optional, ValidNumber(min = 1, max = 500000), Automapped}
+
+
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>644</x>
+      <y>77</y>
+      <w>469</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Booking
+--
++ locatorCode: String {Mandatory, ValidString(max = 3, pattern = "^[A-Z0-9]{6,8}$"), Column(unique = true)}
++ purchaseMoment: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.TIMESTAMP)}
++ travelClass: TravelClass {Mandatory, Valid, Automapped}
++ price: Money {Mandatory, ValidMoney(min = 0, max = 1000000), Automapped}
++ lastNibble: String {Optional, ValidString(pattern = "^\\d{4}$"), Automapped}
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>35</x>
+      <y>476</y>
+      <w>469</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Passenger
+--
++ fullName: String {Mandatory, ValidString(min = 1, max = 255), Automapped}
++ email: String {Mandatory, ValidEmail, Automapped}
++ passport: String {Mandatory, ValidString(pattern = "^[A-Z0-9]{6,9}$"), Automapped}
++ dateOfBirth: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.TIMESTAMP)}
++ specialNeeds: String {Optional, ValidString(min = 1, max = 50), Automapped}
+
+
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1148</x>
+      <y>364</y>
+      <w>105</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Flight
+
+
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1211</x>
+      <y>70</y>
+      <w>105</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TravelClass
+--
+ECONOMY
+BUSINESS
+
+
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>175</y>
+      <w>231</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=*
+m2=1
+              belong to</panel_attributes>
+    <additional_attributes>10.0;10.0;310.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>882</x>
+      <y>175</y>
+      <w>63</w>
+      <h>350</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=*
+m2=1
+bought by</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;480.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>350</y>
+      <w>196</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=*
+m2=1
+refers to</panel_attributes>
+    <additional_attributes>260.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>14</x>
+      <y>21</y>
+      <w>469</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+CustomerDashboard
+--
++ lastFiveDestinations: String[]
++ moneySpentInBookingsLastYear: Double
++ numberOfBookingsEconomy: Integer
++ numberOfBookingsBusiness: Integer
++ countOfBookingsLastFiveYears: Integer
++ averageCostOfBookingsLastFiveYears: Double
++ minimumCostOfBookingsLastFiveYears: Double
++ maximumCostOfBookingsLastFiveYears: Double
++ standardDeviationCostOfBookingsLastFiveYears: Double
++ countOfPassengersInBookings: Integer
++ averagePassengersInBookings: Double
++ minimumPassengersInBookings: Integer
++ maximumPassengersInBookings: Integer
++ standardDeviationPassengersInBookings: Double
+--
+
+bg=CYAN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>441</x>
+      <y>308</y>
+      <w>105</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+BookingRecord
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>532</x>
+      <y>175</y>
+      <w>245</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=*
+m2=1
+belongs to</panel_attributes>
+    <additional_attributes>10.0;190.0;330.0;10.0</additional_attributes>
+  </element>
+</diagram>

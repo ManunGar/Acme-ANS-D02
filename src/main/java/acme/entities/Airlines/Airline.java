@@ -58,7 +58,7 @@ public class Airline extends AbstractEntity {
 
 	@Optional
 	@ValidEmail
-	@Column(unique = true)
+	@Automapped
 	private String				emailAddress;
 
 	@Optional

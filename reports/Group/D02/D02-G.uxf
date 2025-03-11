@@ -87,7 +87,7 @@ Airline
 + website: String {Optional, ValidUrl, Automapped}
 + type: Type {Mandatory, Valid, Automapped}
 + foundationMoment: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.TIMESTAMP)}
-+ emailAddress: String {Optional, ValidEmail, Column(unique = true)}
++ emailAddress: String {Optional, ValidEmail, Automapped}
 + phoneNumber: String {Optional, ValidPhoneNumber, Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>

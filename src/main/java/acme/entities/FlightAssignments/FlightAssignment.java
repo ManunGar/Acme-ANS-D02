@@ -1,66 +1,64 @@
 
-package acme.entities.Aircrafts;
+package acme.entities.FlightAssignments;
 
-import javax.persistence.Column;
+import java.sql.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidNumber;
+import acme.client.components.validation.ValidMoment;
 import acme.constraints.ValidLongText;
-import acme.constraints.ValidShortText;
-import acme.entities.Airlines.Airline;
+import acme.entities.FlightCrewMembers.FlightCrewMember;
+import acme.entities.Legs.Legs;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Aircraft extends AbstractEntity {
+public class FlightAssignment extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes
 
 	@Mandatory
-	@ValidShortText
+	@Valid
 	@Automapped
-	private String				model;
+	private Duty				duty;
 
 	@Mandatory
-	@ValidShortText
-	@Column(unique = true)
-	private String				registrationNumber;
-
-	@Mandatory
-	@ValidNumber(min = 1, max = 800)
-	@Automapped
-	private Integer				capacity;
-
-	@Mandatory
-	@ValidNumber(min = 2000, max = 50000)
-	@Automapped
-	private Integer				cargoWeight;
+	@ValidMoment(past = true)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				moment;
 
 	@Mandatory
 	@Valid
 	@Automapped
-	private AircraftStatus		status;
+	private Status				status;
 
 	@Optional
 	@ValidLongText
 	@Automapped
-	private String				details;
+	private String				remarks;
 
 	// Relationships
 
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Airline				airline;
+	private FlightCrewMember	flightCrewMember;
+
+	@Mandatory
+	@Valid
+	@ManyToOne(optional = false)
+	private Legs				leg;
 
 }

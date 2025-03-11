@@ -14,7 +14,9 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidEmail;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidString;
+import acme.constraints.ValidClaim;
+import acme.constraints.ValidLongText;
+import acme.entities.Legs.Legs;
 import acme.realms.AssistanceAgent;
 import lombok.Getter;
 import lombok.Setter;
@@ -22,6 +24,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidClaim
 public class Claim extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
@@ -37,7 +40,7 @@ public class Claim extends AbstractEntity {
 	private String				passengerEmail;
 
 	@Mandatory
-	@ValidString
+	@ValidLongText
 	@Automapped
 	private String				description;
 
@@ -56,5 +59,10 @@ public class Claim extends AbstractEntity {
 	@Valid
 	@ManyToOne
 	private AssistanceAgent		assistanceAgent;
+
+	@Mandatory
+	@Valid
+	@ManyToOne
+	private Legs				legWhicRequestOrComplain;
 
 }

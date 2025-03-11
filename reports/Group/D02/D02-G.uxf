@@ -139,11 +139,11 @@ bg=green</panel_attributes>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Service
 --
-+ name: String {Mandatory, ValidString(max = 50), Automapped}
++ name: String {Mandatory, ValidShortText, Automapped}
 + pictureUrl: String {Optional, ValidUrl, Automapped}
-+ averageDwellTime: Double {Mandatory, PositiveOrZero, Automapped}
++ averageDwellTime: Double {Mandatory, ValidNumber(min = 0.01, max = 24.00), Automapped}
 + promotionCode: String {Optional, ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$"), Column(unique = true)}
-+ discount: Double {Optional, ValidNumber(min = 0, max = 1000), Automapped}
++ discount: Money {Optional, ValidMoney(min = 0, max = 1000), Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>

@@ -36,7 +36,7 @@ public class ClaimValidator extends AbstractValidator<ValidClaim, Claim> {
 		boolean result;
 
 		if (claim == null)
-			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
+			super.state(context, false, "*", "acme.validation.NotNull.message");
 		else {
 			boolean correctIndicator;
 			List<TrackingLog> trackingLogs = this.repository.findAllByClaimId(claim.getId());

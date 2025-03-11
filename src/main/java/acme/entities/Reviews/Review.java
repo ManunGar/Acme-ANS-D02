@@ -6,7 +6,6 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
@@ -15,17 +14,12 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
 import acme.client.components.validation.ValidString;
-import acme.constraints.ValidReview;
-import acme.entities.Airlines.Airline;
-import acme.entities.Airports.Airport;
-import acme.entities.Services.Service;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-@ValidReview
 public class Review extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
@@ -57,21 +51,5 @@ public class Review extends AbstractEntity {
 
 	@Optional
 	@Automapped
-	private boolean				recommended;
-
-	@Optional
-	@Valid
-	@Automapped
-	private Airline				airline;
-
-	@Optional
-	@Valid
-	@Automapped
-	private Airport				airport;
-
-	@Optional
-	@Valid
-	@Automapped
-	private Service				service;
-
+	private Boolean				recommended;
 }

@@ -84,7 +84,7 @@ Airline
 --
 + name: String {Mandatory, ValidShortText, Automapped}
 + IATAcode: String {Mandatory, ValidIATACode, Column(unique = true)}
-+ website: String {Optional, ValidUrl, Automapped}
++ website: String {Mandatory, ValidUrl, Automapped}
 + type: Type {Mandatory, Valid, Automapped}
 + foundationMoment: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.TIMESTAMP)}
 + emailAddress: String {Optional, ValidEmail, Automapped}
@@ -140,7 +140,7 @@ bg=green</panel_attributes>
 Service
 --
 + name: String {Mandatory, ValidShortText, Automapped}
-+ pictureUrl: String {Optional, ValidUrl, Automapped}
++ pictureUrl: String {Mandatory, ValidUrl, Automapped}
 + averageDwellTime: Double {Mandatory, ValidNumber(min = 0.01, max = 24.00), Automapped}
 + promotionCode: String {Optional, ValidString(pattern = "^[A-Z]{4}-[0-9]{2}$"), Column(unique = true)}
 + discount: Money {Optional, ValidMoney(min = 0, max = 1000), Automapped}

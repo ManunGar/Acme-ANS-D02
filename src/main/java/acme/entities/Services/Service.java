@@ -31,7 +31,7 @@ public class Service extends AbstractEntity {
 	private String				name;
 
 	@Mandatory
-	@ValidUrl	//Esta linea hay que revisarla cuando demos los customValidator
+	@ValidUrl
 	@Automapped
 	private String				pictureUrl;
 

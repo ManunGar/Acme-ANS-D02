@@ -15,7 +15,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidString;
+import acme.constraints.ValidLongText;
 import acme.constraints.ValidShortText;
 import lombok.Getter;
 import lombok.Setter;
@@ -44,7 +44,7 @@ public class Flight extends AbstractEntity {
 	private Money				cost;
 
 	@Optional
-	@ValidString(max = 255)
+	@ValidLongText
 	@Automapped
 	private String				description;
 
@@ -59,12 +59,12 @@ public class Flight extends AbstractEntity {
 	private Date				arrival;
 
 	@Mandatory
-	@ValidString
+	@ValidLongText
 	@Automapped
 	private String				origin;
 
 	@Mandatory
-	@ValidString
+	@ValidLongText
 	@Automapped
 	private String				destination;
 

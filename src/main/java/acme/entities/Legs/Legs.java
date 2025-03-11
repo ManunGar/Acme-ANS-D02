@@ -15,7 +15,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidString;
+import acme.constraints.ValidIATACode;
 import acme.entities.Aircrafts.Aircraft;
 import acme.entities.Airports.Airport;
 import acme.entities.Flight.Flight;
@@ -35,7 +35,7 @@ public class Legs extends AbstractEntity {
 	private Flight				flight;
 
 	@Mandatory
-	@ValidString(max = 7)
+	@ValidIATACode
 	@Column(unique = true)
 	private String				IATAcode;
 

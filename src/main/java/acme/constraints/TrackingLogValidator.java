@@ -27,7 +27,7 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 		else {
 			boolean resolutionMandatory;
 
-			resolutionMandatory = trackingLog.getResolutionPercentage() != 100. || trackingLog.validResolution();	//I can do it with == because i use double and not Double
+			resolutionMandatory = trackingLog.getResolutionPercentage() != 100.00 || trackingLog.validResolution();	//I can do it with == because i use double and not Double
 
 			super.state(context, resolutionMandatory, "resolution", "acme.validation.trackinLog.resolutionMandatory.message");
 

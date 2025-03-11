@@ -10,8 +10,7 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 import javax.validation.ReportAsSingleViolation;
 import javax.validation.constraints.NotBlank;
-
-import org.hibernate.validator.constraints.Length;
+import javax.validation.constraints.Pattern;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
@@ -19,13 +18,13 @@ import org.hibernate.validator.constraints.Length;
 @ReportAsSingleViolation
 
 @NotBlank
-@Length(min = 1, max = 75)
+@Pattern(regexp = "^\\+?\\d{6,15}$")
 
-public @interface ValidShortText {
+public @interface ValidPhoneNumber {
 
 	// Standard validation properties -----------------------------------------
 
-	String message() default "{acme.validation.header.message}";
+	String message() default "{acme.validation.text.message}";
 
 	Class<?>[] groups() default {};
 	Class<? extends Payload>[] payload() default {};

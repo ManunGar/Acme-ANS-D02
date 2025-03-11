@@ -17,7 +17,7 @@ import javax.persistence.Entity;
 import acme.client.components.basis.AbstractRole;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
-import acme.client.components.validation.ValidString;
+import acme.constraints.ValidLongText;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -33,12 +33,12 @@ public class Consumer extends AbstractRole {
 	// Attributes -------------------------------------------------------------
 
 	@Mandatory
-	@ValidString
+	@ValidLongText
 	@Automapped
 	private String				company;
 
 	@Mandatory
-	@ValidString
+	@ValidLongText
 	@Automapped
 	private String				sector;
 

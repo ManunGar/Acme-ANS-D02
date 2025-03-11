@@ -13,8 +13,11 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIATACode;
+import acme.constraints.ValidLongText;
+import acme.constraints.ValidPhoneNumber;
+import acme.constraints.ValidShortText;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,12 +31,12 @@ public class Airline extends AbstractEntity {
 	//Attributes
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidShortText
 	@Automapped
 	private String				name;
 
 	@Mandatory
-	@ValidString(max = 3, pattern = "^[A-Z]+$")
+	@ValidIATACode
 	@Column(unique = true)
 	private String				IATAcode;
 
@@ -48,16 +51,16 @@ public class Airline extends AbstractEntity {
 
 	@Mandatory
 	@ValidMoment(past = true)
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				foundationMoment;
 
 	@Optional
-	@ValidString
+	@ValidLongText
 	@Column(unique = true)
 	private String				emailAddress;
 
 	@Optional
-	@ValidString(pattern = "^\\+?\\d{6,15}$")
+	@ValidPhoneNumber
 	@Automapped
 	private String				phoneNumber;
 

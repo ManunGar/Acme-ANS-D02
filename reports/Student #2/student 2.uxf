@@ -72,7 +72,7 @@ bg=GREEN</panel_attributes>
       <x>1148</x>
       <y>364</y>
       <w>105</w>
-      <h>49</h>
+      <h>42</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Flight
@@ -109,7 +109,7 @@ bg=GREEN</panel_attributes>
       <w>231</w>
       <h>203</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;
+    <panel_attributes>lt=x-&gt;
 m1=*
 m2=1
               belong to</panel_attributes>
@@ -123,7 +123,7 @@ m2=1
       <w>63</w>
       <h>350</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;
+    <panel_attributes>lt=x-&gt;
 m1=*
 m2=1
 bought by</panel_attributes>
@@ -137,7 +137,7 @@ bought by</panel_attributes>
       <w>196</w>
       <h>140</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;
+    <panel_attributes>lt=x-&gt;
 m1=*
 m2=1
 refers to</panel_attributes>
@@ -154,15 +154,15 @@ refers to</panel_attributes>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 CustomerDashboard
 --
-+ lastFiveDestinations: String[]
-+ moneySpentInBookingsLastYear: Double
++ lastFiveDestinations: List&lt;String&gt;
++ moneySpentInBookingsLastYear: Money
 + numberOfBookingsEconomy: Integer
 + numberOfBookingsBusiness: Integer
 + countOfBookingsLastFiveYears: Integer
-+ averageCostOfBookingsLastFiveYears: Double
-+ minimumCostOfBookingsLastFiveYears: Double
-+ maximumCostOfBookingsLastFiveYears: Double
-+ standardDeviationCostOfBookingsLastFiveYears: Double
++ averageCostOfBookingsLastFiveYears: Money
++ minimumCostOfBookingsLastFiveYears: Money
++ maximumCostOfBookingsLastFiveYears: Money
++ standardDeviationCostOfBookingsLastFiveYears: Money
 + countOfPassengersInBookings: Integer
 + averagePassengersInBookings: Double
 + minimumPassengersInBookings: Integer
@@ -195,7 +195,7 @@ bg=GREEN</panel_attributes>
       <w>245</w>
       <h>147</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;
+    <panel_attributes>lt=x-&gt;
 m1=*
 m2=1
 belongs to</panel_attributes>

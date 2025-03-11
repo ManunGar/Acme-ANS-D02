@@ -23,7 +23,7 @@ public class TrackingLogValidator extends AbstractValidator<ValidTrackingLog, Tr
 		boolean result;
 
 		if (trackingLog == null)
-			super.state(context, false, "*", "javax.validation.constraints.NotNull.message");
+			super.state(context, false, "*", "acme.validation.NotNull.message");
 		else {
 			boolean resolutionMandatory;
 

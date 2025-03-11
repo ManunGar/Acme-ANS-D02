@@ -41,7 +41,7 @@ public class ClaimValidator extends AbstractValidator<ValidClaim, Claim> {
 			boolean correctIndicator;
 			List<TrackingLog> trackingLogs = this.repository.findAllByClaimId(claim.getId());
 			//TrackingLogs with ResolutionPercentage = 100.
-			trackingLogs = trackingLogs.stream().filter(x -> x.getResolutionPercentage() == 100.).toList();
+			trackingLogs = trackingLogs.stream().filter(x -> x.getResolutionPercentage() == 100.00).toList();
 			if (trackingLogs.isEmpty())
 				correctIndicator = true;
 			else if (trackingLogs.size() == 1)

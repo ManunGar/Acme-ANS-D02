@@ -19,6 +19,7 @@ import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
 import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidLongText;
 import acme.entities.Airlines.Airline;
 import lombok.Getter;
 import lombok.Setter;
@@ -38,7 +39,7 @@ public class AssistanceAgent extends AbstractRole {
 	private String				employeeCode;
 
 	@Mandatory
-	@ValidString		//It is a List delimitated by comas
+	@ValidLongText		//It is a List delimitated by comas
 	@Automapped
 	private String				spokenLanguages;
 
@@ -48,7 +49,7 @@ public class AssistanceAgent extends AbstractRole {
 	private Date				moment;
 
 	@Optional
-	@ValidString
+	@ValidLongText
 	@Automapped
 	private String				briefBio;
 
@@ -57,7 +58,7 @@ public class AssistanceAgent extends AbstractRole {
 	@Automapped
 	private Money				salary;
 
-	@Mandatory
+	@Optional
 	@ValidUrl
 	@Automapped
 	private String				photo;

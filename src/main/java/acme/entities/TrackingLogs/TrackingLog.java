@@ -15,8 +15,10 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
-import acme.client.components.validation.ValidNumber;
-import acme.client.components.validation.ValidString;
+import acme.client.components.validation.ValidScore;
+import acme.constraints.ValidLongText;
+import acme.constraints.ValidShortText;
+import acme.constraints.ValidTrackingLog;
 import acme.entities.Claims.Claim;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +26,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@ValidTrackingLog
 public class TrackingLog extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
@@ -34,12 +37,12 @@ public class TrackingLog extends AbstractEntity {
 	private Date				lastUpdateMoment;
 
 	@Mandatory
-	@ValidString(max = 50)
+	@ValidShortText
 	@Automapped
 	private String				step;
 
 	@Mandatory
-	@ValidNumber(min = 0, max = 100)
+	@ValidScore
 	@Automapped
 	private double				resolutionPercentage;
 
@@ -48,7 +51,7 @@ public class TrackingLog extends AbstractEntity {
 	private boolean				accepted;	//Indicator
 
 	@Optional
-	@ValidString
+	@ValidLongText
 	@Automapped
 	private String				resolution;
 

@@ -9,8 +9,8 @@ import acme.client.components.basis.AbstractEntity;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidString;
 import acme.client.components.validation.ValidUrl;
+import acme.constraints.ValidIATACode;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidPhoneNumber;
 import acme.constraints.ValidShortText;
@@ -30,7 +30,7 @@ public class Airport extends AbstractEntity {
 	private String				name;
 
 	@Mandatory
-	@ValidString(max = 3, pattern = "^[A-Z]+$")
+	@ValidIATACode
 	@Column(unique = true)
 	private String				IATAcode;
 

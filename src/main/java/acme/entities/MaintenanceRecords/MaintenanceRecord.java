@@ -4,10 +4,9 @@ package acme.entities.MaintenanceRecords;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
 import acme.client.components.basis.AbstractEntity;
@@ -32,7 +31,7 @@ public class MaintenanceRecord extends AbstractEntity {
 	private Date				maintenanceMoment;
 
 	@Mandatory
-	@Enumerated(EnumType.STRING)
+	@Valid
 	@Automapped
 	private MaintenanceStatus	status;
 

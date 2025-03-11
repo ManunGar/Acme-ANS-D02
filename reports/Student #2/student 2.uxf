@@ -58,7 +58,7 @@ Passenger
 + fullName: String {Mandatory, ValidString(min = 1, max = 255), Automapped}
 + email: String {Mandatory, ValidEmail, Automapped}
 + passport: String {Mandatory, ValidString(pattern = "^[A-Z0-9]{6,9}$"), Automapped}
-+ dateOfBirth: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.TIMESTAMP)}
++ dateOfBirth: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.Date)}
 + specialNeeds: String {Optional, ValidString(min = 1, max = 50), Automapped}
 
 

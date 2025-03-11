@@ -18,3 +18,9 @@ acme.validation.job.deadline.message		   = La fecha límite no puede ser anterio
 acme.validation.job.workload.message    	   = Carga de trabajo incorrecta
 
 acme.validation.whine.redress.message	 	   = Proporcione alguna justificación
+
+acme.validation.NotNull.message = La entidad no puede ser null
+
+acme.validation.claim.indicator.message = El indicador de Claim y su TrackingLog deben coincidir
+
+acme.validation.trackinLog.resolutionMandatory.message = La resolucion de la TrackingLog debe estar escrita cuando su resolutionPercentage sea 100.00

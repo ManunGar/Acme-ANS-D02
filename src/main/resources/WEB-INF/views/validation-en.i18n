@@ -18,3 +18,9 @@ acme.validation.job.deadline.message		  = Deadline must be at least one week ahe
 acme.validation.job.workload.message          = Incorrect workload
 
 acme.validation.whine.redress.message	 	  = Provide some justification.
+
+acme.validation.NotNull.message = The Entity cannot be null
+
+acme.validation.claim.indicator.message = The Indicator of Claim and its TrackingLog must be the same
+
+acme.validation.trackinLog.resolutionMandatory.message = The resolution of the TrackingLog must be written after resolutionPercentage reaches 100.00

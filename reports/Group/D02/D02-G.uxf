@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>5</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>380</x>
-      <y>360</y>
-      <w>110</w>
-      <h>30</h>
+      <x>496</x>
+      <y>544</y>
+      <w>176</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 OperatedAt
@@ -18,10 +18,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>145</x>
-      <y>170</y>
-      <w>65</w>
-      <h>50</h>
+      <x>120</x>
+      <y>240</y>
+      <w>104</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 OperationalScope
@@ -35,10 +35,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>235</y>
-      <w>320</w>
-      <h>95</h>
+      <x>0</x>
+      <y>344</y>
+      <w>512</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airport
@@ -57,10 +57,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>320</x>
-      <y>170</y>
-      <w>55</w>
-      <h>50</h>
+      <x>400</x>
+      <y>240</y>
+      <w>88</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 Type
@@ -74,31 +74,31 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>495</x>
-      <y>235</y>
-      <w>320</w>
-      <h>95</h>
+      <x>680</x>
+      <y>344</y>
+      <w>544</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Airline
 --
-+ name: String {Mandatory, ValidString(max = 50), Automapped}
-+ IATAcode: String {Mandatory, ValidString(max = 3, pattern = "^[A-Z]+$"), Column(unique = true)}
++ name: String {Mandatory, ValidShortText, Automapped}
++ IATAcode: String {Mandatory, ValidIATACode, Column(unique = true)}
 + website: String {Optional, ValidUrl, Automapped}
-+ type: Type {Mandatory, Automapped}
++ type: Type {Mandatory, Valid, Automapped}
 + foundationMoment: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.TIMESTAMP)}
-+ emailAddress: String {Optional, ValidString, Column(unique = true)}
-+ phoneNumber: String {Optional, ValidString(pattern = "^\\+?\\d{6,15}$"), Automapped}
++ emailAddress: String {Optional, ValidEmail, Column(unique = true)}
++ phoneNumber: String {Optional, ValidPhoneNumber, Automapped}
 bg=green</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
-      <y>95</y>
-      <w>320</w>
-      <h>95</h>
+      <x>672</x>
+      <y>120</y>
+      <w>512</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Aircraft
@@ -115,10 +115,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>235</x>
-      <y>170</y>
-      <w>65</w>
-      <h>50</h>
+      <x>264</x>
+      <y>240</y>
+      <w>104</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 AircraftStatus
@@ -131,10 +131,10 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>430</y>
-      <w>320</w>
-      <h>95</h>
+      <x>0</x>
+      <y>656</y>
+      <w>512</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Service
@@ -150,10 +150,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>485</x>
-      <y>325</y>
-      <w>160</w>
-      <h>70</h>
+      <x>664</x>
+      <y>488</y>
+      <w>256</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
@@ -163,10 +163,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>275</x>
-      <y>325</y>
-      <w>115</w>
-      <h>70</h>
+      <x>328</x>
+      <y>488</y>
+      <w>184</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
@@ -176,10 +176,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>170</x>
-      <y>325</y>
-      <w>20</w>
-      <h>115</h>
+      <x>160</x>
+      <y>488</y>
+      <w>32</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
@@ -189,10 +189,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>505</x>
-      <y>430</y>
-      <w>320</w>
-      <h>95</h>
+      <x>696</x>
+      <y>656</y>
+      <w>512</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Revies {ValidReview}
@@ -209,10 +209,10 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>385</x>
-      <y>480</y>
-      <w>130</w>
-      <h>20</h>
+      <x>504</x>
+      <y>736</y>
+      <w>208</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=0..1
@@ -222,10 +222,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>325</y>
-      <w>20</w>
-      <h>115</h>
+      <x>976</x>
+      <y>488</y>
+      <w>32</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
@@ -235,10 +235,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>225</x>
-      <y>325</y>
-      <w>290</w>
-      <h>150</h>
+      <x>248</x>
+      <y>488</y>
+      <w>464</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=0..1
@@ -248,10 +248,10 @@ m2=*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>640</x>
-      <y>185</y>
-      <w>20</w>
-      <h>60</h>
+      <x>912</x>
+      <y>264</y>
+      <w>32</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
@@ -261,10 +261,10 @@ m2=*</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>20</y>
-      <w>320</w>
-      <h>130</h>
+      <x>16</x>
+      <y>0</y>
+      <w>512</w>
+      <h>208</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 AdministratorDashboard

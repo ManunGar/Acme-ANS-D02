@@ -18,7 +18,7 @@ import javax.validation.constraints.Pattern;
 @ReportAsSingleViolation
 
 @NotBlank
-@Pattern(regexp = "^[A-Z]{3}X?$")
+@Pattern(regexp = "^[A-Z]{2}X?$")
 
 public @interface ValidIATACode {
 

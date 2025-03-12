@@ -38,5 +38,4 @@ claim-24,2012/07/02 0:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, conse
 # assistanceAgent - standard variations
 claim-25,2012/07/02 0:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",FLIGHT_ISSUES,false,assistanceAgent-01,leg-00
 # assistanceAgent - no singular values
-# legWichRequestOrComplain - standard variations
-claim-26,2012/07/02 0:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",FLIGHT_ISSUES,false,assistanceAgent-00,leg-01
+# legWichRequestOrComplain - no singular values

@@ -1,0 +1,5 @@
+key,name,IATAcode,operationalScope,city,country,website,email,contactPhoneNumber
+#base-example
+airport-01,Lorem ipsum dolor sit ame,NBN,INTERNATIONAL,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,http://lorem.com/ipsum,acme@lorem-ipsum.org,2785524576
+
+

@@ -1,0 +1,7 @@
+key,model,registrationNumber,capacity,cargoWeight,status,details,key:airline
+
+#base-example
+aircraft-00,Lorem ipsum dolor sit ame,Lorem ipsum dolor sit ame,400,26000,ACTIVE,Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*,airline-00
+
+
+

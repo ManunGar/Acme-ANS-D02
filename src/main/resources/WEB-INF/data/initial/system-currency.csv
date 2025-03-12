@@ -1,2 +1,2 @@
-key,systemCurrency,acceptedCurrencies
+key,systemCurrencyCode,acceptedCurrencies
 system-configuration-01,EUR,"EUR,USD,GBP"

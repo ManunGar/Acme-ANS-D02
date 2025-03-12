@@ -1,7 +1,7 @@
 
 package acme.entities.ActivityLog;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -26,6 +26,8 @@ public class ActivityLogs extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
+	// Attributes
+
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -45,6 +47,8 @@ public class ActivityLogs extends AbstractEntity {
 	@ValidNumber(min = 0, max = 10)
 	@Automapped
 	private Integer				severityLevel;
+
+	// Relationships
 
 	@Mandatory
 	@ManyToOne(optional = false)

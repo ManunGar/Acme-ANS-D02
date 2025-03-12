@@ -38,13 +38,14 @@ public class AirlineManager extends AbstractRole {
 	@Automapped
 	private Integer				experience;
 
+	@Optional
+	@ValidUrl
+	@Automapped
+	private String				picture;
+
 	@Mandatory
 	@ValidMoment(past = true)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				dateOfBirth; // QUEST
 
-	@Optional
-	@ValidUrl
-	@Automapped
-	private String				picture;
 }

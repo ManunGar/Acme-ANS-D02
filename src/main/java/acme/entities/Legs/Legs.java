@@ -15,7 +15,7 @@ import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidNumber;
-import acme.constraints.ValidIATACode;
+import acme.client.components.validation.ValidString;
 import acme.entities.Aircrafts.Aircraft;
 import acme.entities.Airports.Airport;
 import acme.entities.Flight.Flight;
@@ -35,7 +35,7 @@ public class Legs extends AbstractEntity {
 	private Flight				flight;
 
 	@Mandatory
-	@ValidIATACode
+	@ValidString(pattern = "^[A-Z]{3}\\d{4}$")
 	@Column(unique = true)
 	private String				IATAcode;
 
@@ -50,9 +50,9 @@ public class Legs extends AbstractEntity {
 	private Date				arrival;
 
 	@Mandatory
-	@ValidNumber
+	@ValidNumber(min = 0.5, max = 100.0)
 	@Automapped
-	private Integer				duration;
+	private Double				duration;
 
 	@Mandatory
 	@Valid
@@ -61,17 +61,17 @@ public class Legs extends AbstractEntity {
 
 	@Mandatory
 	@Valid
-	@Automapped
+	@ManyToOne(optional = false)
 	private Airport				departureAirport;
 
 	@Mandatory
 	@Valid
-	@Automapped
+	@ManyToOne(optional = false)
 	private Airport				arrivalAirport;
 
 	@Mandatory
 	@Valid
-	@Automapped
+	@ManyToOne(optional = false)
 	private Aircraft			aircraft;
 
 }

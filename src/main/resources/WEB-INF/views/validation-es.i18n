@@ -24,3 +24,7 @@ acme.validation.NotNull.message = La entidad no puede ser null
 acme.validation.claim.indicator.message = El indicador de Claim y su TrackingLog deben coincidir
 
 acme.validation.trackinLog.resolutionMandatory.message = La resolucion de la TrackingLog debe estar escrita cuando su resolutionPercentage sea 100.00
+
+acme.validation.Customer.identifier.message = El identificador deberá corresponder con las dos o tres iniciales del Cliente
+
+acme.validation.Customer.identifier.name.message = El identificador no coincide con las iniciales del Cliente

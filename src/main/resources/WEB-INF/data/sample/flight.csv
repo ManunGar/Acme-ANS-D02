@@ -1,0 +1,2 @@
+key,highlights,selfTransfer,cost,description,departure,arrival,origin,destination,layovers
+flight-01,Lorem ipsum dolor sit ame,true,EUR 500.00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",2012/07/02 0:00,2025/01/03 00:00,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut*",50

@@ -20,9 +20,10 @@ public class SystemCurrency extends AbstractEntity {
 	@Mandatory
 	@ValidString(pattern = "^[A-Z]{3}$")
 	@Automapped
-	private String				SystemCurrencyCode;
+	private String				systemCurrency;
 
 	@Mandatory
+	@ValidString
 	@Automapped
 	private String				acceptedCurrencies;
 

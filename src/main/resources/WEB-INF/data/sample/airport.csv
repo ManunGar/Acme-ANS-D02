@@ -73,7 +73,7 @@ airport-64,"Lorem ipsum dolor sit ame",DEN,INTERNATIONAL,"Lorem ipsum dolor sit 
 airport-65,"Lorem ipsum dolor sit ame",BVC,INTERNATIONAL,"Lorem ipsum dolor sit ame","Lorem ipsum dolor sit ame",http://example.org/a/b?a&b,acme64@lorem-ipsum.org,2785524576
 #email-examples
 airport-66,"Lorem ipsum dolor sit ame",AAA,INTERNATIONAL,"Lorem ipsum dolor sit ame","Lorem ipsum dolor sit ame",http://lorem.com/ipsum,acme65@lorem-ipsum.org,2785524576
-airport-67,"Lorem ipsum dolor sit ame",AAP,INTERNATIONAL,"Lorem ipsum dolor sit ame","Lorem ipsum dolor sit ame",http://lorem.com/ipsum,acme:password@lorem-ipsum.org,2785524576
+airport-67,"Lorem ipsum dolor sit ame",AAP,INTERNATIONAL,"Lorem ipsum dolor sit ame","Lorem ipsum dolor sit ame",http://lorem.com/ipsum,"acme66@lorem-ipsum.org",2785524576
 airport-68,"Lorem ipsum dolor sit ame",AAQ,INTERNATIONAL,"Lorem ipsum dolor sit ame","Lorem ipsum dolor sit ame",http://lorem.com/ipsum,a@b.e,2785524576
 airport-69,"Lorem ipsum dolor sit ame",AAW,INTERNATIONAL,"Lorem ipsum dolor sit ame","Lorem ipsum dolor sit ame",http://lorem.com/ipsum,a@b.es,2785524576
 airport-70,"Lorem ipsum dolor sit ame",AAE,INTERNATIONAL,"Lorem ipsum dolor sit ame","Lorem ipsum dolor sit ame",http://lorem.com/ipsum,a@b.esx,2785524576

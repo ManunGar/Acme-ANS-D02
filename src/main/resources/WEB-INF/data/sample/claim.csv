@@ -1,0 +1,3 @@
+key,registrationMoment,passengerEmail,description,claimTypes,accepted,key:assistanceAgent,key:legWhichRequestOrComplain
+# base entity
+claim-00,2012/07/02 0:00,passenger00@acme.com,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",FLIGHT_ISSUES,false,assistanceAgent-00,leg-00

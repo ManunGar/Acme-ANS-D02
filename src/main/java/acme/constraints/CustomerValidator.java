@@ -37,7 +37,7 @@ public class CustomerValidator extends AbstractValidator<ValidCustomer, Customer
 				count++;
 			}
 
-			if (customer.getIdentifier().substring(0, 2) == identifierCustomer || customer.getIdentifier().substring(0, 3) == identifierCustomer)
+			if (customer.getIdentifier().substring(0, 2).equals(identifierCustomer) || customer.getIdentifier().substring(0, 3).equals(identifierCustomer))
 				result = true;
 			else
 				super.state(context, false, "Identifier", "acme.validation.Customer.identifier.name.message");

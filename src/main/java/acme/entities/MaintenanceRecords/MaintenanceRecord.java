@@ -17,7 +17,7 @@ import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoment;
 import acme.constraints.ValidLongText;
 import acme.entities.Aircrafts.Aircraft;
-import acme.entities.Technicians.Technician;
+import acme.realms.Technician;
 import lombok.Getter;
 import lombok.Setter;
 

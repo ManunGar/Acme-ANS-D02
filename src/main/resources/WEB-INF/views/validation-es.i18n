@@ -29,3 +29,7 @@ acme.validation.legs.message = El trayecto no tiene un formato u orden correcto
 
 acme.validation.Manager.identifier.name.message = El identificador del administrador no es correcta
 
+acme.validation.Customer.identifier.message = El identificador deberá corresponder con las dos o tres iniciales del Cliente
+
+acme.validation.Customer.identifier.name.message = El identificador no coincide con las iniciales del Cliente
+

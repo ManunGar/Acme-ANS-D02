@@ -17,7 +17,6 @@ import acme.client.components.validation.ValidMoney;
 import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidShortText;
-import acme.entities.Airlines.Airline;
 import acme.entities.Legs.LegRepository;
 import acme.realms.AirlineManager;
 import lombok.Getter;
@@ -54,16 +53,11 @@ public class Flight extends AbstractEntity {
 	@Mandatory
 	@Valid
 	@ManyToOne(optional = false)
-	private Airline				airline;
-
-	@Mandatory
-	@Valid
-	@ManyToOne(optional = false)
 	private AirlineManager		manager;
 
 
 	@Transient
-	public Date getSheduledDeparture() {
+	public Date getDeparture() {
 		Date result;
 		LegRepository repository = SpringHelper.getBean(LegRepository.class);
 		result = repository.findDepartureByFlightId(this.getId());

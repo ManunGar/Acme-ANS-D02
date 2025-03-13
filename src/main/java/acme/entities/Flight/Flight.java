@@ -8,14 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
 import acme.client.components.validation.ValidMoney;
+import acme.client.helpers.SpringHelper;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidShortText;
 import acme.entities.Airlines.Airline;
@@ -30,8 +29,6 @@ import lombok.Setter;
 public class Flight extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
-	@Autowired
-	private LegRepository		repository;
 
 	// Attributes
 
@@ -68,7 +65,8 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public Date getSheduledDeparture() {
 		Date result;
-		result = this.repository.findDepartureByFlightId(this.getId());
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		result = repository.findDepartureByFlightId(this.getId());
 
 		return result;
 	}
@@ -76,7 +74,8 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public Date getArrival() {
 		Date result;
-		result = this.repository.findArrivalByFlightId(this.getId());
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		result = repository.findArrivalByFlightId(this.getId());
 
 		return result;
 	}
@@ -84,7 +83,8 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public String getOrigin() {
 		String result;
-		result = this.repository.findOriginCityByFlightId(this.getId());
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		result = repository.findOriginCityByFlightId(this.getId()).get(0);
 
 		return result;
 	}
@@ -92,7 +92,8 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public String getDestination() {
 		String result;
-		result = this.repository.findDestinationCityByFlightId(this.getId());
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		result = repository.findDestinationCityByFlightId(this.getId()).get(-1);
 
 		return result;
 	}
@@ -100,7 +101,8 @@ public class Flight extends AbstractEntity {
 	@Transient
 	public Integer getLayovers() {
 		Integer result;
-		result = this.repository.numberOfLayours(this.getId());
+		LegRepository repository = SpringHelper.getBean(LegRepository.class);
+		result = repository.numberOfLayours(this.getId());
 
 		return result;
 	}

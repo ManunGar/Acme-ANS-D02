@@ -23,7 +23,11 @@ import lombok.Setter;
 @Setter
 public class Review extends AbstractEntity {
 
+	//Serialisation version
+
 	private static final long	serialVersionUID	= 1L;
+
+	//Attributes
 
 	@Mandatory
 	@ValidShortText

@@ -12,10 +12,10 @@ crew-05,user-account-crew-05,KL852963,+555555555,Japanese,ON_LEAVE,EUR 75000.00,
 crew-06,user-account-crew-06,MN654987,+666666666,Portuguese,AVAILABLE,EUR 80000.00,35,airline-06
 
 #phoneNumber-example
-crew-07,user-account-crew-07,OP789123,+34777777777,English,ON_LEAVE,EUR 85000.00,40,airline-07
-crew-08,user-account-crew-08,QR123987,+1888888888,Spanish,AVAILABLE,EUR 90000.00,45,airline-08
-crew-09,user-account-crew-09,ST987321,+49999999999,French,ON_VACATION,EUR 95000.00,50,airline-09
-crew-10,user-account-crew-10,UV456852,+33101010101,German,ON_LEAVE,EUR 100000.00,55,airline-10
+crew-07,user-account-crew-07,OP789123,+123456,English,ON_LEAVE,EUR 85000.00,40,airline-07
+crew-08,user-account-crew-08,QR123987,+999999999999999,Spanish,AVAILABLE,EUR 90000.00,45,airline-08
+crew-09,user-account-crew-09,ST987321,1234567,French,ON_VACATION,EUR 95000.00,50,airline-09
+crew-10,user-account-crew-10,UV456852,+49123456789,German,ON_LEAVE,EUR 100000.00,55,airline-10
 crew-11,user-account-crew-11,WX852741,+39111213141,Chinese,AVAILABLE,EUR 105000.00,60,airline-11
 crew-12,user-account-crew-12,YZ741852,+81121314151,Japanese,ON_VACATION,EUR 110000.00,65,airline-12
 

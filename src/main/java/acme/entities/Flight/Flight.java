@@ -1,22 +1,26 @@
 
 package acme.entities.Flight;
 
+import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.components.basis.AbstractEntity;
 import acme.client.components.datatypes.Money;
 import acme.client.components.mappings.Automapped;
 import acme.client.components.validation.Mandatory;
 import acme.client.components.validation.Optional;
-import acme.client.components.validation.ValidMoment;
 import acme.client.components.validation.ValidMoney;
-import acme.client.components.validation.ValidNumber;
 import acme.constraints.ValidLongText;
 import acme.constraints.ValidShortText;
+import acme.entities.Airlines.Airline;
+import acme.entities.Legs.LegRepository;
+import acme.realms.AirlineManager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,6 +30,8 @@ import lombok.Setter;
 public class Flight extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
+	@Autowired
+	private LegRepository		repository;
 
 	// Attributes
 
@@ -49,28 +55,54 @@ public class Flight extends AbstractEntity {
 	private String				description;
 
 	@Mandatory
-	@ValidMoment(past = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				departure;
+	@Valid
+	@ManyToOne(optional = false)
+	private Airline				airline;
 
 	@Mandatory
-	@ValidMoment(past = false)
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				arrival;
+	@Valid
+	@ManyToOne(optional = false)
+	private AirlineManager		manager;
 
-	@Mandatory
-	@ValidLongText
-	@Automapped
-	private String				origin;
 
-	@Mandatory
-	@ValidLongText
-	@Automapped
-	private String				destination;
+	@Transient
+	public Date getSheduledDeparture() {
+		Date result;
+		result = this.repository.findDepartureByFlightId(this.getId());
 
-	@Mandatory
-	@ValidNumber(min = 0, max = 100)
-	@Automapped
-	private Integer				layovers;
+		return result;
+	}
+
+	@Transient
+	public Date getArrival() {
+		Date result;
+		result = this.repository.findArrivalByFlightId(this.getId());
+
+		return result;
+	}
+
+	@Transient
+	public String getOrigin() {
+		String result;
+		result = this.repository.findOriginCityByFlightId(this.getId());
+
+		return result;
+	}
+
+	@Transient
+	public String getDestination() {
+		String result;
+		result = this.repository.findDestinationCityByFlightId(this.getId());
+
+		return result;
+	}
+
+	@Transient
+	public Integer getLayovers() {
+		Integer result;
+		result = this.repository.numberOfLayours(this.getId());
+
+		return result;
+	}
 
 }

@@ -4,7 +4,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>693</x>
+      <x>738</x>
       <y>486</y>
       <w>621</w>
       <h>144</h>
@@ -13,11 +13,11 @@
 Technician
 --
 + licenseNumber: String {Mandatory, ValidString(pattern = "^[A-Z]{2,3}\\d{6}$"), Column(unique = true)}
-+ phoneNumber: String {Mandatory, ValidString(pattern = "^\\+?\\d{6,15}$"), Automapped}
-+ specialisation: String {Mandatory, ValidString(max = 50), Automapped}
++ phoneNumber: String {Mandatory, ValidPhoneNumber , Automapped}
++ specialisation: String {Mandatory, ValidShortText, Automapped}
 + passedAnualHealthTest: Boolean {Mandatory, Automapped}
-+ yearsOfExperience: Integer {Mandatory, ValidNumber(min = 0), Automapped}
-+ certifications: String {Optional, ValidString, Automapped}
++ yearsOfExperience: Integer {Mandatory, ValidNumber(min = 0, max = 120), Automapped}
++ certifications: String {Optional, ValidString(min = 0, max = 255), Automapped}
 
 
 bg=PINK</panel_attributes>
@@ -28,16 +28,16 @@ bg=PINK</panel_attributes>
     <coordinates>
       <x>54</x>
       <y>495</y>
-      <w>468</w>
+      <w>522</w>
       <h>135</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Task
 --
 + type: TaskType {Mandatory, Valid, Automapped}
-+ description: String {Mandatory, ValidString, Automapped}
++ description: String {Mandatory, ValidLongText, Automapped}
 + priority: Integer {Mandatory, ValidNumber(min = 0, max = 10), Automapped}
-+ estimatedDuration: Integer {Mandatory, ValidNumber(min = 0), Automapped}
++ estimatedDuration: Integer {Mandatory, ValidNumber(min = 0, max = 1000), Automapped}
 
 
 
@@ -47,8 +47,8 @@ bg=GREEN</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>927</x>
-      <y>27</y>
+      <x>972</x>
+      <y>36</y>
       <w>135</w>
       <h>63</h>
     </coordinates>
@@ -83,7 +83,7 @@ bg=GREEN</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>990</x>
+      <x>1035</x>
       <y>342</y>
       <w>99</w>
       <h>162</h>
@@ -97,30 +97,30 @@ m2= 1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>513</x>
+      <x>567</x>
       <y>549</y>
-      <w>198</w>
+      <w>189</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=*
 m2=1
 performed by</panel_attributes>
-    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;190.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>360</x>
       <y>261</y>
-      <w>351</w>
+      <w>396</w>
       <h>45</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=  *
 m2=1
 involved in</panel_attributes>
-    <additional_attributes>10.0;20.0;370.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;420.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -133,7 +133,7 @@ involved in</panel_attributes>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
 TechnicianDashboard
 --
-+ numberOfMaintenanceRecordsByStatus: Integer
++ maintenanceRecordsByStatus: Map&lt;String,Integer&gt;
 + maintenanceRecordWithNearestInspectionDue: Integer
 + topFiveAircraftsWithMostTasks: List&lt;Integer&gt;
 + averageEstimatedCostLastYear: Double
@@ -151,7 +151,7 @@ bg=CYAN</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>693</x>
+      <x>738</x>
       <y>216</y>
       <w>603</w>
       <h>135</h>
@@ -161,9 +161,9 @@ MaintenanceRecord
 --
 + maintenanceMoment: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.TIMESTAMP)}
 + status: MaintenanceStatus {Mandatory, Valid, Automapped}
-+ nextInspection: Date {Mandatory, ValidMoment(past = false), Temporal(TemporalType.TIMESTAMP)}
-+ estimatedCost: Double {Mandatory, Min(0), Automapped}
-+ notes: String {Optional, ValidString, Automapped}
++ nextInspection: Date {Mandatory, ValidMoment, Temporal(TemporalType.TIMESTAMP)}
++ estimatedCost: Money {Mandatory, ValidMoney, Automapped}
++ notes: String {Optional, ValidString(min = 0, max =255), Automapped}
 bg=GREEN</panel_attributes>
     <additional_attributes/>
   </element>
@@ -221,15 +221,15 @@ involves</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>981</x>
-      <y>81</y>
+      <x>1026</x>
+      <y>90</y>
       <w>90</w>
-      <h>153</h>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m1=  *
 m2= 1
- belnogs to</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+ belongs to</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

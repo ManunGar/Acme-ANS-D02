@@ -2,6 +2,7 @@
 package acme.forms;
 
 import java.util.List;
+import java.util.Map;
 
 import acme.client.components.basis.AbstractForm;
 import lombok.Getter;
@@ -13,7 +14,7 @@ public class TechnicianDashboard extends AbstractForm {
 
 	private static final long	serialVersionUID	= 1L;
 
-	Integer						numberOfMaintenanceRecordsByStatus;
+	Map<String, Integer>		maintenanceRecordsByStatus;
 	Integer						maintenanceRecordWithNearestInspectionDue;
 
 	List<Integer>				topFiveAircraftsWithMostTasks;

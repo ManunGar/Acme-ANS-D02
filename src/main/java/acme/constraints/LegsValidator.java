@@ -19,6 +19,7 @@ public class LegsValidator extends AbstractValidator<ValidLegs, Legs> {
 
 	@Autowired
 	private LegRepository		repository;
+	@Autowired
 	private AirlineRepository	airlineRepository;
 
 
@@ -47,7 +48,7 @@ public class LegsValidator extends AbstractValidator<ValidLegs, Legs> {
 				List<Legs> legs = this.repository.findAllByFlightId(leg.getFlight().getId());
 				legs.add(leg);
 				legs = LegsValidator.sortLegsByDeparture(legs);
-				for (int i = 0; i < legs.size() - 1 && correctLeg; i++) {
+				for (int i = 0; i < legs.size() - 1 && correctLeg && legs.size() < 2; i++) {
 					if (legs.get(i).getArrival().after(legs.get(i + 1).getDeparture()))
 						correctLeg = false;
 					if (!legs.get(i).getArrivalAirport().getCity().equals(legs.get(i + 1).getDepartureAirport().getCity()))

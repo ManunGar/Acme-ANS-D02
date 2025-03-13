@@ -39,4 +39,7 @@ crew-26,user-account-crew-26,GH852147,+323335353,<marquee>Hacked</marquee>,ON_VA
 crew-27,user-account-crew-27,IJ963852,+333436363,<script>alert(‘Hacked!’);</script>,ON_LEAVE,EUR 160000.00,85,airline-27
 crew-28,user-account-crew-28,KL741963,+343537373,'' or 'A' = 'A,AVAILABLE,EUR 165000.00,90,airline-28
 
+crew-30,user-account-crew-30,KL561963,+343537343,'' or 'A' = 'A,AVAILABLE,EUR 165000.00,90,airline-28
+
+
 #airline - no singular values

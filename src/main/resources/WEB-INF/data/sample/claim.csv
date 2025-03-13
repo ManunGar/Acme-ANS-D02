@@ -1,7 +1,7 @@
 key,registrationMoment,passengerEmail,description,claimTypes,accepted,key:assistanceAgent,key:legWhichRequestOrComplain
 # base entity
 claim-00,2012/07/02 0:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",FLIGHT_ISSUES,false,assistanceAgent-00,leg-00
-# registrationMoment - standard variations
+# registrationMoment - standard variations 
 claim-01,2000/01/01 0:00,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",FLIGHT_ISSUES,false,assistanceAgent-00,leg-00
 claim-02,2000/01/01 0:01,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",FLIGHT_ISSUES,false,assistanceAgent-00,leg-00
 claim-03,2024/12/31 23:59,acme@lorem-ipsum.org,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do: eiusmod tempor incididunt ut labore et dolore magna aliqua! Ut",FLIGHT_ISSUES,false,assistanceAgent-00,leg-00

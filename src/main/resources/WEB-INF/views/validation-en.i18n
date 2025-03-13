@@ -24,3 +24,7 @@ acme.validation.NotNull.message = The Entity cannot be null
 acme.validation.claim.indicator.message = The Indicator of Claim and its TrackingLog must be the same
 
 acme.validation.trackinLog.resolutionMandatory.message = The resolution of the TrackingLog must be written after resolutionPercentage reaches 100.00
+
+acme.validation.legs.message = The leg is not formatted or in the correct order
+
+acme.validation.Manager.identifier.name.message = The manager identification is not correct

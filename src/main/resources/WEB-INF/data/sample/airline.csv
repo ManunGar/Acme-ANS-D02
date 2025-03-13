@@ -47,20 +47,19 @@ airline-34,Lorem ipsum dolor sit ame,BCI,http://lorem.com/ipsum,LUXURY,2024/12/3
 airline-35,Lorem ipsum dolor sit ame,BCJ,http://lorem.com/ipsum,LUXURY,2025/01/01 0:00,acme@lorem-ipsum.org,650788393
 # foundationMoment - no singular values
 # emailAddres - standard variations
-airline-36,Lorem ipsum dolor sit ame,BCK,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme:password@lorem-ipsum.org,650788393
-airline-37,Lorem ipsum dolor sit ame,BCL,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,a@b.e,650788393
-airline-38,Lorem ipsum dolor sit ame,BCM,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,a@b.es,650788393
-airline-39,Lorem ipsum dolor sit ame,BCN,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,a@b.esx,650788393
-airline-40,Lorem ipsum dolor sit ame,BCO,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,650788393
-airline-41,Lorem ipsum dolor sit ame,BCP,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,650788393
+airline-36,Lorem ipsum dolor sit ame,BCL,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,a@b.e,650788393
+airline-37,Lorem ipsum dolor sit ame,BCM,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,a@b.es,650788393
+airline-38,Lorem ipsum dolor sit ame,BCN,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,a@b.esx,650788393
+airline-39,Lorem ipsum dolor sit ame,BCO,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.doloris.edu,650788393
+airline-40,Lorem ipsum dolor sit ame,BCP,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,lorem-ipsum@dolor.sit.amet.consectetur.adipiscing.elit.sed.do.eiusmod.tempor.incididunt.ut.labore.et.dolore.magna.aliqua.Ut.enim.ad.minim.veniam.quis.nostrud.exercitation.ullamco.laboris.nisi.ut.aliquip.ex.ea.commodo.consequat.duis.aute.irure.dolor.es.org,650788393
 # emailAddres - no singular values
 # phoneNumber - standard variations
-airline-42,Lorem ipsum dolor sit ame,BCQ,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+123456
-airline-43,Lorem ipsum dolor sit ame,BCR,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456
-airline-44,Lorem ipsum dolor sit ame,BCS,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+1234567
-airline-45,Lorem ipsum dolor sit ame,BCT,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,1234567
-airline-46,Lorem ipsum dolor sit ame,BCU,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+123456789012345
-airline-47,Lorem ipsum dolor sit ame,BCV,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456789012345
-airline-48,Lorem ipsum dolor sit ame,BCX,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+12345678901234
-airline-49,Lorem ipsum dolor sit ame,BCY,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,12345678901234
+airline-41,Lorem ipsum dolor sit ame,BCQ,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+123456
+airline-42,Lorem ipsum dolor sit ame,BCR,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456
+airline-43,Lorem ipsum dolor sit ame,BCS,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+1234567
+airline-44,Lorem ipsum dolor sit ame,BCT,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,1234567
+airline-45,Lorem ipsum dolor sit ame,BCU,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+123456789012345
+airline-46,Lorem ipsum dolor sit ame,BCV,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,123456789012345
+airline-47,Lorem ipsum dolor sit ame,BCX,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,+12345678901234
+airline-48,Lorem ipsum dolor sit ame,BCY,http://lorem.com/ipsum,LUXURY,2012/07/02 0:00,acme@lorem-ipsum.org,12345678901234
 # phoneNumber - no singular values

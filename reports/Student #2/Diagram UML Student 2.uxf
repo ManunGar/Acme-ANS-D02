@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>198</y>
+      <w>414</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Customer {ValidCustomer}
+--
++ identifier: String {Mandatory, ValidString(pattern = "^[A-Z]{2,3}\\d{6}$"), Column(unique = true)}
++ phoneNumber: String {Mandatory, ValidPhoneNumber, Automapped}
++ physicalAddress: String {Mandatory, ValidLongText, Automapped}
++ city: String {Mandatory, ValidShortText, Automapped}
++ country: String {Mandatory, ValidShortText, Automapped}
++ earnedPoints: Integer {Optional, ValidNumber(min = 0, max = 500000), Automapped}
+
+bg=PINK</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>318</x>
+      <y>198</y>
+      <w>402</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Booking 
+--
++ locatorCode: String {Mandatory, ValidString(pattern = "^[A-Z0-9]{6,8}$"), Column(unique = true)}
++ purchaseMoment: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.TIMESTAMP)}
++ travelClass: TravelClass {Mandatory, Valid, Automapped}
++ price: Money {Mandatory, ValidMoney(min = 0.00, max = 1000000), Automapped}
++ lastNibble: String {Optional, ValidString(pattern = "^\\d{4}$"), Automapped}
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>180</x>
+      <y>648</y>
+      <w>402</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Passenger
+--
++ fullName: String {Mandatory, ValidLongText, Automapped}
++ email: String {Mandatory, ValidEmail, Automapped}
++ passport: String {Mandatory, ValidString(pattern = "^[A-Z0-9]{6,9}$"), Automapped}
++ dateOfBirth: Date {Mandatory, ValidMoment(past = true), Temporal(TemporalType.TIMESTAMP)}
++ specialNeeds: String {Optional, ValidShortText, Automapped}
+
+
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>792</x>
+      <y>60</y>
+      <w>90</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Flight
+
+
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>342</y>
+      <w>90</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+TravelClass
+--
+ECONOMY
+BUSINESS
+
+
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>630</x>
+      <y>66</y>
+      <w>174</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=*
+m2=1
+belongs to &gt;</panel_attributes>
+    <additional_attributes>20.0;220.0;20.0;20.0;270.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>708</x>
+      <y>234</y>
+      <w>144</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1= *
+m2=1
+bought by &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>426</y>
+      <w>60</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=  *
+m2=1
+refers to &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;370.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>24</x>
+      <y>12</y>
+      <w>402</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Form&gt;&gt;
+CustomerDashboard
+--
++ lastFiveDestinations: List&lt;String&gt;
++ moneySpentInBookingsLastYear: Money
++ numberOfBookingsEconomy: Integer
++ numberOfBookingsBusiness: Integer
++ countOfBookingsLastFiveYears: Integer
++ averageCostOfBookingsLastFiveYears: Money
++ minimumCostOfBookingsLastFiveYears: Money
++ maximumCostOfBookingsLastFiveYears: Money
++ standardDeviationCostOfBookingsLastFiveYears: Money
++ countOfPassengersInBookings: Integer
++ averagePassengersInBookings: Double
++ minimumPassengersInBookings: Integer
++ maximumPassengersInBookings: Integer
++ standardDeviationPassengersInBookings: Double
+--
+
+bg=YELLOW</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>336</x>
+      <y>390</y>
+      <w>90</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+BookingRecord
+
+bg=GREEN</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>372</x>
+      <y>288</y>
+      <w>66</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1= *
+m2=1
+belongs to &gt;</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>594</x>
+      <y>432</y>
+      <w>222</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidPhone
+--
++ countryCode must be in range 1..999
++ areaCode must be in range 1..99999
++ number must match pattern "\\d{1,9}([\\s-]\\d{1,9}){0,5}"
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>894</x>
+      <y>438</y>
+      <w>114</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidLongText
+--
++ NotBlank
++ Length(min=1, max=255)
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>546</y>
+      <w>114</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidShortText
+--
++ NotBlank
++ Length(min=1, max=75)
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>816</x>
+      <y>540</y>
+      <w>210</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Constraint&gt;&gt;
+ValidCustomer
+--
++ The identifier must not be null and must match with 
+   the two or three Client's initials and with 
+   the pattern "^[A-Z]{2,3}\\d{6}$"
+   
+bg=RED</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
